@@ -1,0 +1,37 @@
+Ronda;Participante;idPartido;Equipo1;gana1;empata;gana2;Equipo2
+1;Jose;1;Argentina;x;;;Arabia Saudita
+1;Jose;2;Polonia;x;;;Mexico
+1;Jose;3;Argentina;x;;;Mexico
+1;Jose;4;Arabia Saudita;x;;;Polonia
+1;Jose;5;Argentina;x;;;Polonia
+1;Jose;6;Arabia Saudita;x;;;Mexico
+1;Pedro;1;Argentina;;;x;Arabia Saudita
+1;Pedro;2;Polonia;;;x;Mexico
+1;Pedro;3;Argentina;;;x;Mexico
+1;Pedro;4;Arabia Saudita;;;x;Polonia
+1;Pedro;5;Argentina;;;x;Polonia
+1;Pedro;6;Arabia Saudita;;;x;Mexico
+2;Jose;7;Suiza;x;;;Camerun
+2;Jose;8;Brasil;x;;;Suiza
+2;Jose;9;Serbia;x;;;Camerun
+2;Jose;10;Brasil;x;;;Camerun
+2;Jose;11;Serbia;x;;;Suiza
+2;Jose;12;Brasil;x;;;Serbia
+2;Pedro;7;Suiza;;;x;Camerun
+2;Pedro;8;Brasil;;;x;Suiza
+2;Pedro;9;Serbia;;;x;Camerun
+2;Pedro;10;Brasil;;;x;Camerun
+2;Pedro;11;Serbia;;;x;Suiza
+2;Pedro;12;Brasil;;;x;Serbia
+3;Jose;13;Uruguay;x;;;Republica De Corea
+3;Jose;14;Portugal;x;;;Ghana
+3;Jose;15;Uruguay;x;;;Portugal
+3;Jose;16;Ghana;x;;;Republica De Corea
+3;Jose;17;Uruguay;x;;;Ghana
+3;Jose;18;Portugal;x;;;Republica De Corea
+3;Pedro;13;Uruguay;;;x;Republica De Corea
+3;Pedro;14;Portugal;;;x;Ghana
+3;Pedro;15;Uruguay;;;x;Portugal
+3;Pedro;16;Ghana;;;x;Republica De Corea
+3;Pedro;17;Uruguay;;;x;Ghana
+3;Pedro;18;Portugal;;;x;Republica De Corea
