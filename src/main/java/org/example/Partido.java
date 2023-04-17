@@ -4,6 +4,9 @@ import lombok.Getter;
 import lombok.Setter;
 
 public class Partido {
+    //Clase Partido: Tiene como atributos 2 equipos que juegan un partido entre ellos, los goles de cada uno,
+    // el ID del partido y el número de ronda.
+    // Contiene un constructor, los Getter correspondientes y el método resultado.
     @Getter
     private Equipo equipo1;
     @Getter
@@ -25,6 +28,7 @@ public class Partido {
         this.ronda = ronda;
     }
     public ResultadoEnum resultado(Equipo equipo){
+    //Recibe uno de los dos equipos del partido y devuelve su resultado en ese partido.
         if (this.golesEquipo1==this.getGolesEquipo2()) {
             return  ResultadoEnum.empate;
         }

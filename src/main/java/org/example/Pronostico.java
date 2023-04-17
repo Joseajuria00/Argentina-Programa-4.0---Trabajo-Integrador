@@ -3,6 +3,8 @@ package org.example;
 import lombok.Getter;
 
 public class Pronostico {
+    //Clase Pronostico: Tiene como atributos un partido, un equipo, el resultado, el ID y el número de ronda.
+    // Tiene un constructor, los Getter correspondientes y el método puntos.
     @Getter
     private Partido partido;
     @Getter
@@ -20,7 +22,7 @@ public class Pronostico {
         this.id = id;
         this.ronda = ronda;
     }
-    public int puntos(){
+    public int puntos(){//No recibe parámetros. Busca si se acertó el pronostico y devuelve la puntuación obtenida.
         if(partido.resultado(equipo).equals(resultado)){
             return 1;
         }

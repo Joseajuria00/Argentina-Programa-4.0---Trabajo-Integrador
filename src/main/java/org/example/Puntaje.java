@@ -29,11 +29,12 @@ public class Puntaje {
                     int golesEquipo1 = Integer.parseInt(partesResult[3]);
                     int golesEquipo2 = Integer.parseInt(partesResult[4]);
                     int nroRonda = Integer.parseInt(partesResult[0]);
+
                     Partido partido = new Partido(id, equipo1,equipo2,golesEquipo1,golesEquipo2, nroRonda);
                     partidos.add(partido);
 
                     if(rondas.size()<nroRonda){rondas.add(new Ronda(nroRonda));}
-                    rondas.get(nroRonda-1).addPartido(partido);
+                    rondas.get(nroRonda-1).addPartido(partido);//Se puede utilizar un HashMap
                 } catch (NumberFormatException e){
                     System.err.println("Hay uno o más goles de un equipo que no son enteros");
                     System.exit(1);
@@ -63,11 +64,13 @@ public class Puntaje {
                         equipo = partido.getEquipo1();
                         resultado = ResultadoEnum.empate;
                     }
+
                     Jugador jugador = buscarJugador(jugadores, nombreJugador);
                     if(jugador==null){
                         jugador = new Jugador(nombreJugador, rondas);
                         jugadores.add(jugador);
                     }
+
                     Pronostico pronostico = new Pronostico(partido, equipo, resultado, id, nroRonda);
                     pronosticos.add(pronostico);
                     jugador.addPronostico(pronostico);
@@ -77,11 +80,18 @@ public class Puntaje {
         }
 
         for(Jugador jugador : jugadores){
-            jugador.Puntos();
+            System.out.println("\n" + jugador.getNombre());
+            int puntosTOT = 0;
+            for(Ronda ronda : rondas){
+                System.out.println("Puntos ronda " + ronda.getNro() + ": " + jugador.getPuntosRonda(ronda));
+            }
+            puntosTOT = jugador.Puntos();
+            System.out.println("Puntos totales "+ jugador.getNombre() +": " + puntosTOT + "(" + puntosTOT + " pronosticos acertados)");
         }
-        int puntosTOT = 0;
+
     }
     public static Partido buscarPartidoId(List<Partido> partidos, int id){
+    //Recibe una lista de partidos y un ID correspondiente a un pronóstico. Devuelve el partido con el mismo ID.
         for(Partido partido : partidos){
             if(partido.getId() == id){
                 return partido;
@@ -90,6 +100,7 @@ public class Puntaje {
         return null;
     }
     public static Jugador buscarJugador(List<Jugador> jugadores, String nombre){
+    //Recibe una lista de jugadores y un nombre de un jugador. Devuelve el jugador que tenga ese nombre.
         for(Jugador jugador : jugadores){
             if(jugador.getNombre().equals(nombre)){
                 return jugador;
