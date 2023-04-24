@@ -6,20 +6,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Jugador {
-    //Clase Jugador: Tiene como atributos un nombre, una lista de rondas y una lista de pronósticos.
-    //Tiene 2 constructores, los Getter de los atributos que sean necesarios y 3 funciones.
+    //Clase Jugador: Tiene como atributos un nombre, una lista de fases y una lista de pronósticos.
+    //Tiene 2 constructores, los Getter de los atributos que sean necesarios y 2 funciones.
     @Getter
     private String nombre;
     @Getter
-    private List<Ronda> rondas = new ArrayList<>();
+    private List<Fase> fases = new ArrayList<>();
+    @Getter
     private List<Pronostico> pronosticos = new ArrayList<>();
-    public Jugador(String nombre, List<Ronda> rondas){
+    public Jugador(String nombre, List<Fase> fases){
         this.nombre = nombre;
-        this.rondas = rondas;
+        this.fases = fases;
     }
-    public Jugador(String nombre, List<Ronda> rondas, List<Pronostico> pronos){
+    public Jugador(String nombre, List<Fase> fs, List<Pronostico> pronos){
         this.nombre = nombre;
-        this.rondas = rondas;
+        this.fases = fs;
         this.pronosticos = pronos;
     }
 
@@ -27,26 +28,11 @@ public class Jugador {
         this.pronosticos.add(pronostico);
     }
 
-    public int Puntos(){//Devuelve los puntos totales del jugador correspondiente
+    public int Puntos(){//Devuelve los puntos totales del jugador correspondiente sin contar puntos extras
         int puntosTOT = 0;
-        for (Ronda ronda : this.rondas){
-            int puntosRonda=0;
-            puntosRonda = ronda.puntosRonda(pronosticos);
-            /*
-            for(Partido part : ronda.getPartidos()){
-                for(Pronostico pron : this.pronosticos){
-                    if(part.getId()==pron.getId()){
-                        puntosRonda+=ronda.puntosRonda(pron);
-                    }
-                }
-            }*/
-            puntosTOT+=puntosRonda;
+        for(Fase fase : this.fases){
+            puntosTOT+=fase.puntosFase(this);
         }
         return puntosTOT;
-    }
-    public int getPuntosRonda(Ronda ronda){//Devuelve un número de ronda y devuelve los puntos obtenidos por un jugador en esa ronda.
-        int puntosRonda=0;
-        puntosRonda = ronda.puntosRonda(pronosticos);
-        return puntosRonda;
     }
 }

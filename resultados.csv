@@ -1,19 +1,19 @@
-Ronda;idPartido;Equipo1;Cantidad goles1;Cantidad goles2;Equipo2
-1;1;Argentina;1;2;Arabia Saudita
-1;2;Polonia;0;0;Mexico
-1;3;Argentina;2;0;Mexico
-1;4;Arabia Saudita;0;2;Polonia
-1;5;Argentina;2;0;Polonia
-1;6;Arabia Saudita;1;2;Mexico
-2;7;Brasil;2;0;Serbia
-2;8;Suiza;1;0;Camerun
-2;9;Brasil;1;0;Suiza
-2;10;Serbia;3;3;Camerun
-2;11;Brasil;0;1;Camerun
-2;12;Serbia;2;3;Suiza
-3;13;Uruguay;0;0;Republica De Corea
-3;14;Portugal;3;2;Ghana
-3;15;Uruguay;0;2;Portugal
-3;16;Ghana;3;2;Republica De Corea
-3;17;Uruguay;0;2;Ghana
-3;18;Portugal;1;2;Republica De Corea
+Fase;Ronda;idPartido;Equipo1;Cantidad goles1;Cantidad goles2;Equipo2
+1;1;1;Argentina;1;2;Arabia Saudita
+1;1;2;Polonia;0;0;Mexico
+1;1;3;Brasil;2;0;Serbia
+1;1;4;Suiza;1;0;Camerun
+1;1;5;Uruguay;0;0;Republica De Corea
+1;1;6;Portugal;3;2;Ghana
+1;2;7;Argentina;2;0;Mexico
+1;2;8;Arabia Saudita;0;2;Polonia
+1;2;9;Brasil;1;0;Suiza
+1;2;10;Serbia;3;3;Camerun
+1;2;11;Uruguay;0;2;Portugal
+1;2;12;Ghana;3;2;Republica De Corea
+1;3;13;Argentina;2;0;Polonia
+1;3;14;Arabia Saudita;1;2;Mexico
+1;3;15;Brasil;0;1;Camerun
+1;3;16;Serbia;2;3;Suiza
+1;3;17;Uruguay;0;2;Ghana
+1;3;18;Portugal;1;2;Republica De Corea

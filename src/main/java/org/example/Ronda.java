@@ -1,15 +1,18 @@
 package org.example;
 
 import lombok.Getter;
+import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Ronda {
     //Clase Ronda: Tiene como atributos el número de ronda y una lista de partidos.
-    // Tiene 2 constructores, los Getter necesarios y 2 funciones (addPartido y puntosRonda).
+    // Tiene 2 constructores, los Getter necesarios y 3 funciones (addPartido, puntosRonda y cantPartidos).
     @Getter
     private int nro;
+    @Setter
+    @Getter
     private List<Partido> partidos = new ArrayList<>();
 
     public Ronda(int nro){
@@ -19,27 +22,22 @@ public class Ronda {
         this.nro = nro;
         this.partidos = partidos;
     }
+
     public void addPartido (Partido partido) {//Recibe como parámetro un partido y lo agrega a la lista de partidos.
         this.partidos.add(partido);
     }
-
-    public List<Partido> getPartidos() {
-        return partidos;
-    }
-
-    public int puntosRonda1(Pronostico pronostico) {
-        return pronostico.puntos();
-    }
-    public int puntosRonda(List<Pronostico> pronosticos){
-        //Recibe una lista de pronósticos y devuelve solo la puntuación de la ronda correspondiente.
+    public int puntosRonda(Jugador jugador){//Recibe un jugador y devuelve la puntuación de la ronda.
         int puntos = 0;
         for(Partido part : partidos){
-            for(Pronostico pron : pronosticos){
+            for(Pronostico pron : jugador.getPronosticos()){
                 if(part.getId()==pron.getId()){
-                    puntos+=pron.puntos();
+                    puntos+=pron.puntosPronostico();
                 }
             }
         }
         return puntos;
+    }
+    public int cantPartidos(){//Devuelve la cantidad de partidos que hay en la ronda.
+        return partidos.size();
     }
 }
