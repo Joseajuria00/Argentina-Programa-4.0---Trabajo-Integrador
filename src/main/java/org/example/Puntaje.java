@@ -2,17 +2,14 @@ package org.example;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.nio.Buffer;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class Puntaje {
     public static void main(String[] args) throws IOException, SQLException {
@@ -25,7 +22,7 @@ public class Puntaje {
         List<Partido> partidos = new ArrayList<>();
         List<Ronda> rondas = new ArrayList<>();
         List<Fase> fases = new ArrayList<>();
-        int cantRondas=0;
+        //int cantRondas=0;
         while (rs.next()) {
             try {
                 int nroFase = Integer.parseInt(rs.getString(1));
@@ -56,7 +53,7 @@ public class Puntaje {
         }
 
         rs = db.executeQuery("SELECT * FROM pronosticos");
-        List<Pronostico> pronosticos = new ArrayList<>();
+        //List<Pronostico> pronosticos = new ArrayList<>();
         List<Jugador> jugadores = new ArrayList<>();
         while (rs.next()) {
             int nroFase = Integer.parseInt(rs.getString(1));
@@ -78,7 +75,7 @@ public class Puntaje {
                 jugadores.add(jugador);
             }
             Pronostico pronostico = new Pronostico(partido, equipo, resultado, id, nroFase, valorAcierto);
-            pronosticos.add(pronostico);
+            //pronosticos.add(pronostico);
             jugador.addPronostico(pronostico);
         }
 
