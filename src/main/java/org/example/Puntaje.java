@@ -81,14 +81,15 @@ public class Puntaje {
 
         for(Jugador jugador : jugadores){
             int puntosTOT=0, puntosExtras=0;
-            System.out.println("\n" + jugador.getNombre());
+            System.out.println("\n" + "\033[34m" + jugador.getNombre() + "\033[0m");
             for(Fase fase : fases){
                 int puntosFase=0;
-                System.out.println("FASE " + fase.getNro());
+                System.out.println("\033[36mFASE " + fase.getNro() + "\033[0m");
                 for(Ronda ronda : fase.getRondas()){
                     System.out.print("\tPuntos ronda " + ronda.getNro() + ": " + ronda.puntosRonda(jugador));
-                    puntosExtras += rondaPerfecta(jugador,ronda,valorAcierto, puntosRondaPerfecta);
-                    puntosFase += rondaPerfecta(jugador,ronda,valorAcierto, puntosRondaPerfecta);
+                    int aux = rondaPerfecta(jugador,ronda,valorAcierto, puntosRondaPerfecta);
+                    puntosExtras += aux;
+                    puntosFase += aux;
                     System.out.println();
                 }
                 puntosFase += fase.puntosFase(jugador);
@@ -104,7 +105,7 @@ public class Puntaje {
     public static int fasePerfecta(Jugador jugador, Fase fase, int acierto, int puntosFasePerfecta){
         int cantAciertos = fase.puntosFase(jugador)/acierto;
         if(cantAciertos==fase.cantPartidos()){
-            System.out.print(" +" + acierto*5 + "(Ha acertados todos los partidos de esta fase).");
+            System.out.print(" +" + puntosFasePerfecta + "(Ha acertados todos los partidos de esta fase).");
             return puntosFasePerfecta;
         }
         return 0;
@@ -112,7 +113,7 @@ public class Puntaje {
     public static int rondaPerfecta(Jugador jugador, Ronda ronda, int acierto, int puntosRondaPerfecta){
         int cantAciertos = ronda.puntosRonda(jugador)/acierto;
         if(cantAciertos==ronda.cantPartidos()){
-            System.out.print(" +" + acierto*2 + "(Ha acertado todos los partidos de esta ronda)." );
+            System.out.print(" +" + puntosRondaPerfecta + "(Ha acertado todos los partidos de esta ronda)." );
             return puntosRondaPerfecta;
         }
         return 0;

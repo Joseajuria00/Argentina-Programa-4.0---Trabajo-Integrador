@@ -7,11 +7,6 @@ public class MySQLCon {
     public void connectDatabase(String url, String user, String password) {
         try {
             // Registramos el driver de MySQL
-            try {
-                Class.forName("com.mysql.cj.jdbc.Driver");
-            } catch (ClassNotFoundException ex) {
-                System.out.println("Error al registrar el driver de MySQL: " + ex);
-            }
             connection = null;
             // Conectamos con la base de datos
             connection = DriverManager.getConnection(url, user, password);
